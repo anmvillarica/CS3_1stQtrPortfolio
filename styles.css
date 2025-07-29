@@ -10,7 +10,7 @@ body {
     background-color: ivory; color: orangered;
 }
 
-pre {
+h1 {
     font-size: 2rem;
     padding: 0.5vw; 
     border: solid; border-width: 2px;
