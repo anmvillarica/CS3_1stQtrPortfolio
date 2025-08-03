@@ -18,4 +18,3 @@
 
 ### 4. What **1 word/ phrase/ or sentence** do you have for the Philippines after hearing SONA 2025?
 * > Good **ideas** **promise** a great future, *but* they do not bring positive **change** until they are put into **action**.
-
