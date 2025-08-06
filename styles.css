@@ -41,6 +41,8 @@ body {
     padding-top: 5.5%; padding-bottom: 5.5%;
     padding-left: 0.75%; padding-right: 0.75%; 
     height: 100vh; width: 55vw;
-    background-color: orangered; color: ivory;
+    color: ivory;
+    background-image: url(content_flowerbg.png);
+    background-size: cover; background-position: 2%;
     float: left; text-align: left;
 }
