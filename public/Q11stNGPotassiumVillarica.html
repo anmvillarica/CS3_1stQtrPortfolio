@@ -13,24 +13,24 @@
     <div class="information">
       <a href="../index.html" style="text-decoration: none;"><b><h1 id = "title"> - VILLARICA, Arianna's Portfolio! - </h1></b></a>
       <h4>Section: <b>9-Potassium</b></h4>
-      <h4>Last Updated: <b>August 8, 2025</b></h4>
+      <h4>Last Updated: <b>August 12, 2025</b></h4>
       <h4>Status: <b>Finished</b></h4>
       <h4>Listening to: <b>Leonora♫</b></h4>
        </div> 
 
     <div class="content">
-        <h3>How many times can you procrastinate until you're 88 years old <br> if you procrastinate 4 times per day (as a 14-year-old)?</h3>
-
         <script> 
         let age = window.prompt("Enter your age please:", "14");
         let maxAge = window.prompt("Enter the max age you want to reach:", "88");
         let numPerDay = window.prompt("How many times per day do you want to procrastinate?", "4");
-        let sureKaBa = window.confirm(`Are your inputs, namely ${age} years old, ${maxAge} years old, and ${4} times, to be confirmed?`)
+        let sureKaBa = window.confirm(`Are your inputs, namely ${age} years old, ${maxAge} years old, and ${numPerDay} times, to be confirmed?`)
 
         var totalRequired = (numPerDay * 365) * (maxAge - age);
         
+
+        document.write(`<br><b>How many times can you procrastinate until you're ${maxAge} years old if you procrastinate ${numPerDay} times per day (as a ${age}-year-old)?</b>`);
         if (sureKaBa)
-          document.write("Answer: You can procrastinate " + totalRequired + " more times until you reach the ripe old age of " + maxAge + ".");
+          document.write(`<br><br><b>Answer:</b> You can procrastinate ${totalRequired} more times until you reach the ripe old age of ${maxAge}.`);
         else
           alert("Run the code again");
 
