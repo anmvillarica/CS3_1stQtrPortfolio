@@ -1,0 +1,53 @@
+<html> 
+
+<head>
+    <title>Q112GPotassiumVillarica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+<div class="page">
+    <div class="information">
+      <a href="../index.html" style="text-decoration: none;"><b><h1 id = "title"> - VILLARICA, Arianna's Portfolio! - </h1></b></a>
+      <h4>Section: <b>9-Potassium</b></h4>
+      <h4>Last Updated: <b>August 15, 2025</b></h4>
+      <h4>Status: <b>In Progress</b></h4>
+      <h4>Listening to: <b>Pwede Ba ♫</b></h4>
+       </div> 
+
+    <div class="content">
+        <h2>Q1 2nd Graded Exercise submitted by Potassium</h2>
+
+        <label for="inp_mealPrice">Meal Price: </label>
+        <input id="inp_mealPrice"><br><br>
+        <label for="inp_tip">Tip: </label>
+        <input id="inp_tip"><br><br>
+        <label for="inp_serviceCharge">Service Charge: </label>
+        <input id="inp_serviceCharge"><br><br>
+
+        <button type="button" id = "otp_button">Output here!</button> 
+
+        <script>
+            const mp = number(document.getElementById("inp_mealPrice"));
+            const tip = document.getElementById("inp_tip");
+            const sc = document.getElementById("inp_serviceCharge");
+
+            const btn = document.getElementById("otp_button");
+
+            btn.addEventListener('click', totalMeal);
+
+            function totalMeal() {
+                totalCost = (mp + tip + (sc / 100 * mp));
+
+                alert("Total Meal: " + totalCost);
+            }
+        </script>
+    </div>
+  </div>
+
+</body>
+
+</html>
