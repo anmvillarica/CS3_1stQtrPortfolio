@@ -46,8 +46,9 @@
                 let sc = +document.getElementById("inp_serviceCharge").value;
 
                 let totalCost = mp + tip + (sc / 100 * mp);
+                let otp_totalCost = toFixed(totalCost, 2);
 
-                document.getElementById("otp_area").innerHTML += `${totalCost}`;
+                document.getElementById("otp_area").innerHTML += `${otp_totalCost}`;
             }
         </script>
     </div>
