@@ -46,3 +46,23 @@ body {
     background-size: cover; background-position: 2%;
     float: left; text-align: left;
 }
+
+.js_otp {
+    overflow: hidden;
+}
+
+#otp_label {
+    width:fit-content; float:left;
+}
+
+#otp_button {
+    background-color: ivory; color: orangered;
+    border: solid; border-color: #ffde59;
+    font-size: 1rem; 
+    font-family: "Lato", sans-serif;
+}
+
+#otp_button:hover {
+    background-color: orangered; color: ivory;
+    transform: scale(105%);
+}
