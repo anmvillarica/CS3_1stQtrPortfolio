@@ -47,7 +47,10 @@
                 if (guess != 0 && guess <= 100)
                 {
                     if (guess == dNumber)
+                    {
                         result = "You are CORRECT!";
+                        confetti();
+                    }
                     else if (guess < dNumber)
                         result = "The number is HIGHER!"; 
                     else if (guess > dNumber)
@@ -59,6 +62,8 @@
                 document.getElementById("otp_area").innerHTML = result;
             }
         </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     </div>
   </div>
 
