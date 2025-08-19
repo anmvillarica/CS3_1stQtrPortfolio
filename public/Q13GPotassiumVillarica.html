@@ -1,0 +1,67 @@
+<html> 
+
+<head>
+    <title>Q13GPotassiumVillarica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+<div class="page">
+    <div class="information">
+      <a href="../index.html" style="text-decoration: none;"><b><h1 id = "title"> - VILLARICA, Arianna's Portfolio! - </h1></b></a>
+      <h4>Section: <b>9-Potassium</b></h4>
+      <h4>Last Updated: <b>August 19, 2025</b></h4>
+      <h4>Status: <b>In Progress</b></h4>
+      <h4>Listening to: <b>Masyado Pang Maaga ♫</b></h4>
+       </div> 
+
+    <div class="content">
+        <h2>Q1 3rd Graded Exercise <i>submitted by Arianna Villarica <br> of 9-Potassium</i></h2>
+
+        <p>Guess the number: ****</p>
+        <p>The number is <u>from 1 to 100</u></p>
+
+        <label for="inp_numberGuess">Enter your guess: </label>
+        <input id="inp_numberGuess" type="number"><br><br>
+
+        <button type="button" id = "otp_button"><b>CHECK YOUR SHERLOCK HOLMES SKILLS</b></button> 
+
+        <div class="js_otp">
+        <p id = "otp_label"><b>Result: </b></p>
+        <p id ="otp_area"></p>
+        </div>
+
+        <script>
+            var dNumber = Math.floor(Math.random() * 100) + 1;
+            var btn = document.getElementById("otp_button");
+
+            btn.addEventListener('click', checkIt);
+
+            function checkIt() {
+                let guess = +document.getElementById("inp_numberGuess").value; 
+                let result = " ";
+
+                if (guess != 0 && guess <= 100)
+                {
+                    if (guess == dNumber)
+                        result = "You are CORRECT!";
+                    else if (guess < dNumber)
+                        result = "The number is HIGHER!"; 
+                    else if (guess > dNumber)
+                        result = "The number is LOWER!";
+                }
+                else
+                    result = "Enter a number between 1 and 100 (inclusive)!";
+                
+                document.getElementById("otp_area").innerHTML = result;
+            }
+        </script>
+    </div>
+  </div>
+
+</body>
+
+</html>
