@@ -66,14 +66,3 @@ body {
     background-color: orangered; color: ivory;
     transform: scale(105%);
 }
-
-header {
-    background-color: orangered;
-    color: ivory; 
-    text-align: center;
-    margin: 10px; 
-}
-
-.homepage {
-    
-}
