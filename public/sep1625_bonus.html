@@ -12,11 +12,11 @@
 
 <body>
     <div class = "page">
-    <h1 id = "title">Guess My Word[le]</h1>
+    <h1 id = "title">Guess My Word!</h1>
     <p id="wordDisplay"></p>
     <div class = "input">
         <input type="text" id="guessInput" maxlength="1">
-        <button onclick="makeGuess()">Guess</button>
+        <img id = "penguinImage" src="../sep1625_img.png" onclick="makeGuess()"></button>
     </div>
     <div id = "failedAttempts"></div>
     <div id = usedLetters>(Ahem- Badly) Guessed Letters: </div>
@@ -24,6 +24,7 @@
     </div>
 
     <script>
+    // word part    
     let secretWord = ["i", "g", "l", "o", "o"];
     let guessedWord = ["_", "_", "_", "_", "_"];
     let guessedLetters = [];
@@ -39,7 +40,7 @@
         let correct = false;
 
         for (let i = 0; i < secretWord.length; i++) {
-        if (secretWord[i] === guess) {
+        if (secretWord[i] === guess)) {
             guessedWord[i] = guess;
             correct = true;
         }
@@ -51,10 +52,10 @@
             
             for(let i = 0; i < guessedLetters.length; i++)
             {
-                if(guess != guessedLetters[i])
+                if((guess != guessedLetters[i]) && (guess != ""))
                 {
                     guessedLetters.push(guess) 
-                    document.getElementById("usedLetters").innerHTML += guess;
+                    document.getElementById("usedLetters").innerHTML += "<li>guess</li>";
                 }
             }
         }
