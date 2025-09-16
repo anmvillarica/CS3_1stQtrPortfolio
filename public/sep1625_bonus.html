@@ -12,61 +12,72 @@
 
 <body>
     <div class = "page">
-    <h1 id = "title">Guess My Word!</h1>
-    <p id="wordDisplay"></p>
     <div class = "input">
+        <h1 id = "title">Guess My Word!</h1>
+        <p id="wordDisplay"></p>
         <input type="text" id="guessInput" maxlength="1">
-        <img id = "penguinImage" src="../sep1625_img.png" onclick="makeGuess()"></button>
+        <br> 
+        <div id = "failedAttempts"></div>
+        <br> 
+        <p id="message"></p>
+        <br>
+        <div id = usedLetters><b>Incorrect Guesses:<b> </div>
     </div>
-    <div id = "failedAttempts"></div>
-    <div id = usedLetters>(Ahem- Badly) Guessed Letters: </div>
-    <p id="message"></p>
+    <img id = "penguinImage" src="../sep1625_img.png" onclick="makeGuess()"></button>
     </div>
 
     <script>
-    // word part    
     let secretWord = ["i", "g", "l", "o", "o"];
     let guessedWord = ["_", "_", "_", "_", "_"];
-    let guessedLetters = [];
 
     document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    
+    let incorrectGuesses = [];
+    let usedLetters = document.getElementById("usedLetters");
 
-    let attempts = document.getElementById("failedAttempts");
-    let noOfAttempts = 5;
-    attempts.innerHTML = `Number of Attempts Left: ${noOfAttempts}`;
+    let attemptsLeft = 5;
+    let attempts = document.getElementById("failedAttempts"); 
+    attempts.innerHTML += `<b>Number of Tries Left:<b> <i>${attemptsLeft}<i>`;
 
     function makeGuess() {
         let guess = document.getElementById("guessInput").value.toLowerCase();
         let correct = false;
 
         for (let i = 0; i < secretWord.length; i++) {
-        if (secretWord[i] === guess)) {
-            guessedWord[i] = guess;
-            correct = true;
-        }
+            if (secretWord[i] === guess) {
+                guessedWord[i] = guess;
+                correct = true;
+            }
         }
 
         if (correct == false)
         {
-            noOfAttempts -= 1;
-            
-            for(let i = 0; i < guessedLetters.length; i++)
-            {
-                if((guess != guessedLetters[i]) && (guess != ""))
+            let addToList = true; 
+
+            attemptsLeft--; 
+            attempts.innerHTML = `Number of Tries Left: ${attemptsLeft}`;
+
+            for (let i = 0; i < incorrectGuesses.length; i++){
+                if(guess != incorrectGuesses[i])
+                    addToList = true; 
+                else 
                 {
-                    guessedLetters.push(guess) 
-                    document.getElementById("usedLetters").innerHTML += "<li>guess</li>";
+                    addToList = false; 
+                    break; 
                 }
             }
+
+            if (addToList == true)
+            {
+                usedLetters.innerHTML += guess + " ";
+            }
         }
-        attempts.innerHTML = `Number of Attempts Left: ${noOfAttempts}`;
 
         document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
         document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
         document.getElementById("guessInput").value = "";
-
     }
-    </script>
+</script>
 
 </body>
-</html>
+</html> 
