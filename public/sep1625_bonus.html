@@ -35,49 +35,76 @@
     let incorrectGuesses = [];
     let usedLetters = document.getElementById("usedLetters");
 
+    let correctGuesses = []; 
+
     let attemptsLeft = 5;
     let attempts = document.getElementById("failedAttempts"); 
     attempts.innerHTML += `<b>Number of Tries Left:<b> <i>${attemptsLeft}<i>`;
 
-    function makeGuess() {
-        let guess = document.getElementById("guessInput").value.toLowerCase();
-        let correct = false;
+    let addToList = true; 
 
-        for (let i = 0; i < secretWord.length; i++) {
-            if (secretWord[i] === guess) {
-                guessedWord[i] = guess;
-                correct = true;
-            }
-        }
+    function makeGuess() { 
+        if (attemptsLeft > 0) 
+        { 
+            let guess = document.getElementById("guessInput").value.toLowerCase();
+            let correct = false;
 
-        if (correct == false)
-        {
-            let addToList = true; 
-
-            attemptsLeft--; 
-            attempts.innerHTML = `Number of Tries Left: ${attemptsLeft}`;
-
-            for (let i = 0; i < incorrectGuesses.length; i++){
-                if(guess != incorrectGuesses[i])
-                    addToList = true; 
-                else 
-                {
-                    addToList = false; 
-                    break; 
+            for (let i = 0; i < secretWord.length; i++) {
+                if (secretWord[i] === guess) {
+                    guessedWord[i] = guess;
+                    correct = true;
+                    
+                    checkExistence(correctGuesses, guess);
                 }
             }
 
-            if (addToList == true)
+            if (correct == false)
             {
-                usedLetters.innerHTML += guess + " ";
+                checkExistence(incorrectGuesses, guess);
+
+                attemptsLeft--; 
+                attempts.innerHTML = `<b>Number of Tries Left:<b> ${attemptsLeft}`;
+            }
+
+            if(correctGuesses.length == 4)
+                confetti();
+
+            document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+            document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
+            document.getElementById("guessInput").value = "";
+        }
+        else 
+        {
+            document.getElementById("message").innerHTML = '<h4>No more tries... 😔</h4><br><button onclick="makeGuess()" id = "playAgain">Play Again?</button>';
+            incorrectGuesses = []; 
+            correctGuesses = []; 
+            attemptsLeft = 6;  
+            attempts.innerHTML = `<b>Number of Tries Left:<b> <i>${attemptsLeft}<i>`;
+            usedLetters.innerHTML = "<b>Incorrect Guesses: <b>";
+
+        }
+    }
+
+    function checkExistence(listy, guess) {
+        for (let i = 0; i < listy.length; i++){
+            if(guess != listy[i])
+                addToList = true; 
+            else 
+            {
+                addToList = false; 
+                break; 
             }
         }
 
-        document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
-        document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
-        document.getElementById("guessInput").value = "";
+        if (addToList == true)
+        {
+            listy.innerHTML += guess + " ";
+            listy.push(guess);
+        }
     }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 </body>
 </html> 
