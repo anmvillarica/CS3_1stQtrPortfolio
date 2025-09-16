@@ -17,11 +17,8 @@
         <h1 id = "title">Guess My Word!</h1>
         <p id="wordDisplay"></p>
         <input type="text" id="guessInput" maxlength="1">
-        <br> 
         <div id = "failedAttempts"></div>
-        <br> 
         <p id="message"></p>
-        <br>
         <div id = usedLetters><b>Incorrect Guesses:<b> </div>
     </div>
     </div>
@@ -61,6 +58,8 @@
             if (correct == false)
             {
                 checkExistence(incorrectGuesses, guess);
+                if(addToList == true)
+                    usedLetters.innerHTML += guess + " ";
 
                 attemptsLeft--; 
                 attempts.innerHTML = `<b>Number of Tries Left:<b> ${attemptsLeft}`;
@@ -98,7 +97,6 @@
 
         if (addToList == true)
         {
-            listy.innerHTML += guess + " ";
             listy.push(guess);
         }
     }
