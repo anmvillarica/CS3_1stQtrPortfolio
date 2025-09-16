@@ -57,24 +57,27 @@
 
             if (correct == false)
             {
-                checkExistence(incorrectGuesses, guess);
-                if(addToList == true)
-                    usedLetters.innerHTML += guess + " ";
-
                 attemptsLeft -= 1; 
                 if (attemptsLeft < 0){
-                    document.getElementById("message").textContent = '<p>No more tries...😔</p><button onclick="reload()" id = "playAgain">Play Again?</button>';
+                    document.getElementById("message").innerHTML = '<p>No more tries...😔</p><button onclick="reload()" id = "playAgain">Play Again?</button>';
+                    attempts.innerHTML = `<b>Number of Tries Left:<b> 0`;
                 }
-                else
+                else {
+                    checkExistence(incorrectGuesses, guess);
+                    if(addToList == true)
+                        usedLetters.innerHTML += guess + " ";
                     attempts.innerHTML = `<b>Number of Tries Left:<b> ${attemptsLeft}`;
+                }
             }
 
             if(correctGuesses.length == 4)
                 confetti();
 
-            document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
-            document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
-            document.getElementById("guessInput").value = "";
+            if (attemptsLeft > 0) {
+                document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+                document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
+                document.getElementById("guessInput").value = "";
+            }
         }
         else 
         {
@@ -104,8 +107,8 @@
         correctGuesses = []; 
         attemptsLeft = 5;  
         attempts.innerHTML = `<b>Number of Tries Left:<b> <i>${attemptsLeft}<i>`;
-        usedLetters.innerHTML = "<b>Incorrect Guesses: <b>";
         document.getElementById("message").innerHTML = '';
+        usedLetters.innerHTML = "<b>Incorrect Guesses: <b>";
     }
 </script>
 
