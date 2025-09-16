@@ -41,7 +41,7 @@
     let addToList = true; 
 
     function makeGuess() { 
-        if (attemptsLeft > 0) 
+        if (attemptsLeft >= 0) 
         { 
             let guess = document.getElementById("guessInput").value.toLowerCase();
             let correct = false;
