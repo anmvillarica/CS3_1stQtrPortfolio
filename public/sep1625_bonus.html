@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <title>Ianna's Guessing Game!</title>
+    <link rel="stylesheet" href="../styles_sep1625.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<head> 
+
+</head>
+
+<body>
+    <div class = "page">
+    <h1 id = "title">Guess My Word[le]</h1>
+    <p id="wordDisplay"></p>
+    <div class = "input">
+        <input type="text" id="guessInput" maxlength="1">
+        <button onclick="makeGuess()">Guess</button>
+    </div>
+    <div id = "failedAttempts"></div>
+    <div id = usedLetters>(Ahem- Badly) Guessed Letters: </div>
+    <p id="message"></p>
+    </div>
+
+    <script>
+    let secretWord = ["i", "g", "l", "o", "o"];
+    let guessedWord = ["_", "_", "_", "_", "_"];
+    let guessedLetters = [];
+
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+
+    let attempts = document.getElementById("failedAttempts");
+    let noOfAttempts = 5;
+    attempts.innerHTML = `Number of Attempts Left: ${noOfAttempts}`;
+
+    function makeGuess() {
+        let guess = document.getElementById("guessInput").value.toLowerCase();
+        let correct = false;
+
+        for (let i = 0; i < secretWord.length; i++) {
+        if (secretWord[i] === guess) {
+            guessedWord[i] = guess;
+            correct = true;
+        }
+        }
+
+        if (correct == false)
+        {
+            noOfAttempts -= 1;
+            
+            for(let i = 0; i < guessedLetters.length; i++)
+            {
+                if(guess != guessedLetters[i])
+                {
+                    guessedLetters.push(guess) 
+                    document.getElementById("usedLetters").innerHTML += guess;
+                }
+            }
+        }
+        attempts.innerHTML = `Number of Attempts Left: ${noOfAttempts}`;
+
+        document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+        document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
+        document.getElementById("guessInput").value = "";
+
+    }
+    </script>
+
+</body>
+</html>
