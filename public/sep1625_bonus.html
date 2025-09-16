@@ -61,8 +61,12 @@
                 if(addToList == true)
                     usedLetters.innerHTML += guess + " ";
 
-                attemptsLeft--; 
-                attempts.innerHTML = `<b>Number of Tries Left:<b> ${attemptsLeft}`;
+                attemptsLeft -= 1; 
+                if (attemptsLeft < 0){
+                    document.getElementById("message").textContent = '<p>No more tries...😔</p><button onclick="reload()" id = "playAgain">Play Again?</button>';
+                }
+                else
+                    attempts.innerHTML = `<b>Number of Tries Left:<b> ${attemptsLeft}`;
             }
 
             if(correctGuesses.length == 4)
@@ -74,13 +78,7 @@
         }
         else 
         {
-            document.getElementById("message").innerHTML = '<h4>No more tries... 😔</h4><button onclick="makeGuess()" id = "playAgain">Play Again?</button>';
-            incorrectGuesses = []; 
-            correctGuesses = []; 
-            attemptsLeft = 5;  
-            attempts.innerHTML = `<b>Number of Tries Left:<b> <i>${attemptsLeft}<i>`;
-            usedLetters.innerHTML = "<b>Incorrect Guesses: <b>";
-
+            document.getElementById("message").innerHTML = '<p>No more tries...😔</p><button onclick="reload()" id = "playAgain">Play Again?</button>';
         }
     }
 
@@ -99,6 +97,15 @@
         {
             listy.push(guess);
         }
+    }
+
+    function reload(){
+        incorrectGuesses = []; 
+        correctGuesses = []; 
+        attemptsLeft = 5;  
+        attempts.innerHTML = `<b>Number of Tries Left:<b> <i>${attemptsLeft}<i>`;
+        usedLetters.innerHTML = "<b>Incorrect Guesses: <b>";
+        document.getElementById("message").innerHTML = '';
     }
 </script>
 
