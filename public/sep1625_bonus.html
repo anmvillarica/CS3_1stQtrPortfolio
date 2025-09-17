@@ -70,8 +70,10 @@
                 }
             }
 
-            if(correctGuesses.length == 4)
+            if(correctGuesses.length == 4) {
                 confetti();
+                document.getElementById("message").innerHTML = '<button onclick="reload()" id = "playAgain">Play Again?</button>';
+            }
 
             if (attemptsLeft > 0) {
                 document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
