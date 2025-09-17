@@ -24,8 +24,8 @@
     </div>
 
     <script>
-    let secretWord = ["i", "g", "l", "o", "o"];
-    let guessedWord = ["_", "_", "_", "_", "_"];
+    let secretWord = ["i", "g", "l", "o", "o", "i", "a", "n", "n", "a"];
+    let guessedWord = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
 
     document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
     
@@ -76,7 +76,7 @@
                 document.getElementById("guessInput").value = "";
             }
 
-            if(correctGuesses.length == 4) {
+            if(correctGuesses.length == 7) {
                 confetti();
                 document.getElementById("message").innerHTML = '<button onclick="reload()" id = "playAgain">Play Again?</button>';
             }
