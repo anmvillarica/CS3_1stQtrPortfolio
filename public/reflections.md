@@ -23,18 +23,18 @@
 > During the latter half of the quarter, we started using buttons a lot. These alert the script to start a process or confirm an input. However, the process of how it confirms and sends "signals" is still pretty confusing for me as how it works wasn't really explained. 
 
 ## Describe on what will be your plan of action in order to help yourself in understanding further the topics listed on the second items.
-My plan of action is to **experiment** and **research** on these topics in my free time (and also ask help from Sir), so that I can learn how to make use of these effectively in exercises and in personal projects. I also plan to create my own sites and maybe games so that I can really exercise my skills that I already mastered and want to master.
+>My plan of action is to **experiment** and **research** on these topics in my free time (and also ask help from Sir), so that I can learn how to make use of these effectively in exercises and in personal projects. I also plan to create my own sites and maybe games so that I can really exercise my skills that I already mastered and want to master.
 
 ## In the activities that were done in class, list at least two that you think were effective and at least two that you think not effective in helping you understand topics in our course and why?
-The two activities that were effective was:
-* Kahoot
-* Bonus Exercises
+>The two activities that were effective was:
+>* Kahoot
+>* Bonus Exercises
 
-They really motivated me to work hard and apply what I learned while **integrating themselves in key memory spaces** as they were accompanied by happy, strong feelings.
+>They really motivated me to work hard and apply what I learned while **integrating themselves in key memory spaces** as they were accompanied by happy, strong feelings.
 
-However, the two activities that were not as effective was:
-* Just copying the code from the slides
-* Debugging
+>However, the two activities that were not as effective was:
+>* Just copying the code from the slides
+>* Debugging
 
-These were not as effective as it didn't really teach us that much, and it just **further confused some of us**. They were a point for practical learning; however, they could've been introduced and explained a bit first before giving it as an exercise. 
+>These were not as effective as it didn't really teach us that much, and it just **further confused some of us**. They were a point for practical learning; however, they could've been introduced and explained a bit first before giving it as an exercise. 
 
