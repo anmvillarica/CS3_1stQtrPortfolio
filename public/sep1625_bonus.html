@@ -76,7 +76,7 @@
                 document.getElementById("guessInput").value = "";
             }
 
-            if(correctGuesses.length == 7) {
+            if(correctGuesses.length == 6) {
                 confetti();
                 document.getElementById("message").innerHTML = '<button onclick="reload()" id = "playAgain">Play Again?</button>';
             }
